@@ -31,7 +31,7 @@ class _VideoListWidgetState extends State<VideoListWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+      margin: EdgeInsets.symmetric(vertical: 16, horizontal: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -59,14 +59,17 @@ class _VideoListWidgetState extends State<VideoListWidget> {
                       bufferForPlaybackAfterRebufferMs: 2000),
                 ),
                 configuration: BetterPlayerConfiguration(
-                    autoPlay: false, aspectRatio: 1, handleLifecycle: true),
+                    autoPlay: false, aspectRatio: 1, handleLifecycle: true, controlsConfiguration: const BetterPlayerControlsConfiguration(
+                          playerTheme: BetterPlayerTheme.material,
+                        ),
+                  ),
                 //key: Key(videoListData.hashCode.toString()),
                 playFraction: 0.8,
                 betterPlayerListVideoPlayerController: controller,
               ),
               aspectRatio: 1),
           Padding(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(15),
             child: Text(
                 "Horror: In Steven Spielberg's Jaws, a shark terrorizes a beach "
                 "town. Plainspoken sheriff Roy Scheider, hippie shark "

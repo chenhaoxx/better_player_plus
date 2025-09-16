@@ -35,8 +35,13 @@ class _VideoListPageState extends State<VideoListPage> {
     }
   }
 
+  final PageController _pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
+    
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(title: Text("Video in list")),
       body: Container(
@@ -61,6 +66,26 @@ class _VideoListPageState extends State<VideoListPage> {
               },
             ),
           )
+          // Expanded(
+          //   child: PageView.builder(
+          //     controller: _pageController,
+          //     scrollDirection: Axis.vertical, // 垂直滑动
+          //     onPageChanged: (index) {
+                
+          //     },
+          //     itemCount: dataList.length,
+          //     itemBuilder: (context, index) {
+          //       VideoListData videoListData = dataList[index];
+          //       return SizedBox(
+          //         width: screenWidth,
+          //         height: screenHeight,
+          //         child: VideoListWidget(
+          //           videoListData: videoListData,
+          //         ),
+          //       );
+          //     },
+          //   )
+          // )
         ]),
       ),
     );
