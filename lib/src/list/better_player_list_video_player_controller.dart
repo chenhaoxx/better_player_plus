@@ -20,6 +20,20 @@ class BetterPlayerListVideoPlayerController {
     _betterPlayerController?.seekTo(duration);
   }
 
+  bool? get isPlaying => _betterPlayerController?.isPlaying();
+
+  void autoSwitchState() {
+    final state = isPlaying;
+    if (state == null) {
+      return ;
+    }
+    if (state) {
+      pause();
+    } else {
+      play();
+    }
+  }
+
   // ignore: use_setters_to_change_properties
   void setBetterPlayerController(
       BetterPlayerController? betterPlayerController) {
