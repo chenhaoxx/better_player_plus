@@ -116,6 +116,9 @@ class _BetterPlayerState extends State<BetterPlayer> with WidgetsBindingObserver
   }
 
   void onControllerEvent(BetterPlayerControllerEvent event) {
+    if (widget.controller.isDisposed) {
+      return ;
+    }
     switch (event) {
       case BetterPlayerControllerEvent.openFullscreen:
         onFullScreenChanged();
