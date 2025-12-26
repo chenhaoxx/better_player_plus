@@ -413,6 +413,10 @@ class VideoPlayerController extends ValueNotifier<VideoPlayerValue> {
     await _applyLooping();
   }
 
+  bool get isPlaying {
+    return value.isPlaying;
+  }
+
   /// Pauses the video.
   Future<void> pause() async {
     value = value.copyWith(isPlaying: false);

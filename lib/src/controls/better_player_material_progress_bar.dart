@@ -189,7 +189,7 @@ class _ProgressBarPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    const height = 2.0;
+    const height = 1.0;
 
     canvas.drawRRect(
       RRect.fromRectAndRadius(
